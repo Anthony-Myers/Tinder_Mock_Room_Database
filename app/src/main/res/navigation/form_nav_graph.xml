@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form_nav_graph"
+    app:startDestination="@id/destination_email_fragment">
+
+    <fragment
+        android:id="@+id/destination_email_fragment"
+        android:name="com.example.tindermockroomdatabase.ui.EmailFragment"
+        tools:layout="@layout/email_fragment">
+        <action
+            android:id="@+id/action_email_fragment_to_name_fragment"
+            app:destination="@id/destination_name_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_name_fragment"
+        android:name="com.example.tindermockroomdatabase.ui.NameFragment"
+        tools:layout="@layout/name_fragment">
+        <action
+            android:id="@+id/action_name_fragment_to_birthday_fragment"
+            app:destination="@+id/destination_birthday_fragment" />
+        <action
+            android:id="@+id/action_name_fragment_pop"
+            app:popUpTo="@id/destination_email_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_birthday_fragment"
+        android:name="com.example.tindermockroomdatabase.ui.BirthdayFragment"
+        tools:layout="@layout/birthday_fragment">
+        <action
+            android:id="@+id/action_birthday_fragment_to_gender_fragment"
+            app:destination="@+id/destination_gender_fragment" />
+        <action
+            android:id="@+id/action_birthday_fragment_pop"
+            app:popUpTo="@id/destination_name_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_gender_fragment"
+        android:name="com.example.tindermockroomdatabase.ui.GenderFragment"
+        tools:layout="@layout/gender_fragment">
+        <action
+            android:id="@+id/action_gender_fragment_to_school_fragment"
+            app:destination="@+id/destination_school_fragment" />
+        <action
+            android:id="@+id/action_gender_fragment_pop"
+            app:popUpTo="@id/destination_birthday_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_school_fragment"
+        android:name="com.example.tindermockroomdatabase.ui.SchoolFragment"
+        tools:layout="@layout/school_fragment">
+        <action
+            android:id="@+id/action_school_fragment_to_profiles_fragment"
+            app:destination="@+id/destination_profiles_fragment" />
+        <action
+            android:id="@+id/action_school_fragment_pop"
+            app:popUpTo="@id/destination_gender_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_profiles_fragment"
+        android:name="com.example.tindermockroomdatabase.ui.ProfilesFragment"
+        tools:layout="@layout/profiles_fragment">
+        <action
+            android:id="@+id/action_profiles_fragment_pop"
+            app:popUpTo="@+id/destination_email_fragment"/>
+    </fragment>
+</navigation>
